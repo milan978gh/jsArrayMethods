@@ -17,8 +17,8 @@ for (let i = 0; i < companies.length; i++) {
   console.log(companies[i]);
 }
 -ili ovako->
-companies.forEach((value-company, index, array) => {
-  console.log(value-company);
+companies.forEach((value, index, array) => {
+  console.log(value);
 });
 */
 
@@ -32,13 +32,13 @@ for (let i = 0; i < ages.length; i++) {
   }
 };
 -ili ovako->
-const canDrink = ages.filter(function(value-age,index,array) {
-  if (value-age >= 21) {
+const canDrink = ages.filter(function(value,index,array) {
+  if (value >= 21) {
     return true;
   }
 });
 -ili ES6->
-const canDrink = ages.filter(value-age => value-age >= 21);
+const canDrink = ages.filter(age => age >= 21);
 
 // filter retail companies
 const retailCompanies = companies.filter(function(company) {
@@ -48,20 +48,35 @@ const retailCompanies = companies.filter(function(company) {
 });
 -ES6->
 const retailCompanies = companies.filter(company => company.category === 'Retail');
+
 // filter companies from 80-es
-const companiesFrom80es = companies.filter((company) => {
+const companiesFrom80es = companies.filter(function(company) {
   if (company.start < 1990) {
     return true;
   }
 });
 -ES6->
 const companiesFrom80es = companies.filter(company => company.start < 1990);
-*/
-// lasted less than 10yr
-const lastedLessThan10Yr = companies.filter(company => (company.end - company.start) < 10);
-console.log(lastedLessThan10Yr);
 
+// lasted 10+ yrs
+const lastedTenYrs = companies.filter(company => (company.end - company.start) >= 10);
+*/
 
 // map
+// create array of company names
+/*
+const companyNames = companies.map(function(value, index, array) {
+  return value.name;
+});
+-ES6->
+const companyNames = companies.map(company => company.name);
+
+// name and start-end yr
+const companyAndStartYr = companies.map(company => `${company.name} [${company.start}-${company.end}]`);
+
+// get square root
+const agesSquare = ages.map(age => Math.sqrt(age));
+*/
+
 // sort
 // reduce
